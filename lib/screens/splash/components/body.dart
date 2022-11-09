@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project/constants.dart';
 import 'package:project/size_config.dart';
-import 'package:project/screens/splash/component/splash_content.dart';
+
+import 'package:project/screens/splash/components/splash_content.dart';
+import 'package:project/components/default_button.dart';
+import 'package:project/screens/sing_in/sign_in_screen.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -67,6 +70,17 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                     Spacer(flex: 3),
+                    SizedBox(
+                      width: double.infinity,
+                      height: getProportionateScreenHeight(56),
+                      child: DefaultButton(
+                        text: "Continue",
+                        press: () {
+                          Navigator.pushNamed(context, SignInScreen.routeName);
+                        },
+                      ),
+                    ),
+                    Spacer(),
                   ],
                 ),
               ),
